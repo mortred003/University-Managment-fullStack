@@ -1,0 +1,57 @@
+.home-container {
+  height: 100vh;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  overflow: hidden;
+  padding: 2rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.glass-box {
+  margin-top: 15vh;
+  width: 80%;
+  max-width: 600px;
+  padding: 3rem;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(15px);
+  border-radius: 20px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.5s ease-in-out;
+}
+
+.welcome-text {
+  color: #ffcc00;
+  font-size: 2.5rem;
+  font-weight: bold;
+  text-shadow: 1px 1px #00000033;
+}
+
+.underwelcome-text {
+  color: #ffdf52;
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-shadow: 1px 1px #00000033;
+}
+.button-row {
+  display:flex; gap:1rem; margin-bottom:6vh;
+  flex-wrap:wrap; justify-content:center;
+}
+.nav-button {
+  flex: 0 1 160px;
+  text-align:center;
+  background:#ffcc00;
+  color:#101010;
+  border:none;
+  padding:.9rem 1rem;
+  border-radius:28px;
+  font-weight:600;
+  font-size:1.05rem;
+  cursor:pointer;
+  transition:transform .2s, box-shadow .2s;
+}
+.nav-button:hover   { transform:translateY(-5px); box-shadow:0 6px 12px #0003; }
+.nav-button:active  { transform:translateY(0);    box-shadow:0 2px 4px  #0004; }

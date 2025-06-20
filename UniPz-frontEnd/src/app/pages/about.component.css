@@ -1,0 +1,89 @@
+.about-container {
+  min-height: 90vh;
+  padding: 6vh 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+  text-align: center;
+}
+
+.page-title {
+  font-size: 3rem;
+  margin-bottom: 2rem;
+  color: #ffcc00;
+}
+.news{
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #ffcc00;
+  text-shadow: 1px 1px #00000033;
+}
+.glass-card {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(10px);
+  padding: 2rem 3rem;
+  border-radius: 24px;
+  max-width: 900px;
+  color: #202020;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+.glass-card p {
+  margin: 1rem 0;
+  font-size: 1.1rem;
+}
+
+.highlight-points {
+  list-style: none;
+  padding: 0;
+  margin: 1.5rem 0;
+}
+
+.highlight-points li {
+  margin: 0.5rem 0;
+  font-weight: 500;
+}
+.back-btn{
+  position:fixed; top:20px; left:50%; transform:translateX(-50%);
+  width:48px; height:48px; border-radius:50%; text-align:center; line-height:48px;
+  font-size:2rem; color:#ffcc00; text-decoration:none; background:rgba(0,0,0,.15);
+  backdrop-filter:blur(6px); transition:transform .2s, background .2s; z-index:20;
+}
+.back-btn:hover{ background:rgba(0,0,0,.25); transform:translateX(-50%) scale(1.1); }
+
+.semester-head{
+  margin:1.1rem 0 .3rem;
+  padding:.6rem 1rem;
+  background:rgba(255,255,255,0.4);
+  backdrop-filter:blur(4px);
+  border-left:4px solid #ffdf52;
+  border-radius:8px;
+  font-weight:600;
+  cursor:pointer;
+  display:flex; justify-content:space-between; align-items:center;
+}
+.semester-head span{ font-size:1.2rem; }
+
+.subjects-wrap{ margin:.6rem 0 1.2rem; padding-left:.4rem; }
+
+.subject-card h4{ margin:.3rem 0 .2rem; color:#ffcc00; }
+.subject-card p { margin:.1rem 0; font-size:.9rem; }
+.text-layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  padding: 2rem;
+  max-width: 800px;
+  margin: auto;
+}
+
+.column.right-align {
+  text-align: right;
+  margin-left: 50%;
+}
+
+.column.full-width {
+  text-align: center;
+}

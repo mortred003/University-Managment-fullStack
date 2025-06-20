@@ -1,0 +1,65 @@
+<div class="blur-blob blob-yellow"></div>
+<div class="blur-blob blob-cyan"></div>
+<div class="blur-blob blob-magenta"></div>
+<a routerLink="/" class="back-btn" aria-label="Back">▼</a>
+
+<div class="department-container">
+  <h1 class="page-title">Departments</h1>
+    @if (loading) {
+        <p class="loading">Loading departments…</p>
+    } @else if (error) {
+        <p class="error-message">{{ error }}</p>
+    } @else {}
+  @for (dept of departments; track dept.id) {
+    <section class="department-card" (click)="toggleDept(dept)"
+             [@deptExpand]="dept.expanded ? 'open' : 'closed'">>
+      <h2>{{ dept.name }}</h2>
+      <div class="expand-icon">{{ dept.expanded ? '▲' : '▼' }}</div>
+
+        @if (dept.expanded) {
+            <div class="department-details">
+                <p>{{ dept.description }}</p>
+
+                @for (sem of dept.semesters ?? []; track sem.id) {
+
+                    <!-- HEADER (always clickable once department is open) -->
+                    <div class="semester-head" (click)="toggleSem(sem, $event)">
+                        Semester {{ sem.semesterNo }} – {{ sem.academicYear }}
+                        <span>{{ sem.expanded ? '▲' : '▼' }}</span>
+                    </div>
+
+                    <!-- BODY (animated) -->
+                    <div class="subjects-body" [@semExpand]="sem.expanded ? 'open' : 'closed'">
+
+                        @if ((sem.subjects ?? []).length > 0) {
+                            <table class="subject-table">
+                                <thead>
+                                <tr>
+                                    <th>Name</th><th>Description</th><th>Credits</th>
+                                    <th>Classroom</th><th>Time</th><th>Professor</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                    @for (subj of sem.subjects ?? []; track subj.id) {
+                                        <tr>
+                                            <td>{{ subj.name }}</td>
+                                            <td>{{ subj.description }}</td>
+                                            <td>{{ subj.credits }}</td>
+                                            <td>{{ subj.classroom }}</td>
+                                            <td>{{ subj.time }}</td>
+                                            <td>{{ subj.professorName ?? subj.profName }}</td>
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
+                        } @else {
+                            <p class="empty-message">No subjects for this semester.</p>
+                        }
+
+                    </div>
+                } @empty {
+                    <p class="empty-message">No semesters yet.</p>
+                }
+            </div>
+        }</section>
+  }</div>

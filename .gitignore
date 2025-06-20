@@ -1,0 +1,16 @@
+# === Spring Boot ===
+UniPz/target/
+*.class
+*.jar
+*.war
+
+# === Angular ===
+UniPz-frontEnd/node_modules/
+UniPz-frontEnd/dist/
+
+# === General ===
+*.log
+.DS_Store
+.env
+.idea/
+.vscode/
