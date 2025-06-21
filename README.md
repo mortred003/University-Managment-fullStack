@@ -44,7 +44,7 @@ Update subject details (name, description, credits, schedule, etc.)
 Backend
 Unipz
       
-    ./mvnw spring-boot:run
+    ./gradlew bootRun
 
 Frontend 
 UniPz-frontEnd
